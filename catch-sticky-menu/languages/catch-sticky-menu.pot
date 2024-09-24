@@ -1,0 +1,375 @@
+# Copyright (C) 2018-2022 Catch Plugins
+# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Catch Sticky Menu\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2024-04-17 14:25+0545\n"
+"PO-Revision-Date: 2016-12-12 09:23-0500\n"
+"Last-Translator: Sakin Shrestha <info@catchplugins.com>\n"
+"Language-Team: Catch Plugins <info@catchplugins.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;esc_attr_e;esc_attr__;_nx;_x;"
+"esc_html_e;esc_html__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_n_noop:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/class-catch-sticky-menu-admin.php:117
+#: ../admin/class-catch-sticky-menu-admin.php:137
+#: ../admin/partials/dashboard-display.php:19
+msgid "Settings"
+msgstr ""
+
+#: ../admin/class-catch-sticky-menu-admin.php:126
+#: ../admin/class-catch-sticky-menu-admin.php:127
+#: ../admin/class-catch-sticky-menu-admin.php:136
+#: ../admin/partials/catch-sticky-menu-admin-display.php:18
+msgid "Catch Sticky Menu"
+msgstr ""
+
+#: ../admin/class-catch-sticky-menu-admin.php:147
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:20
+msgid "Lets you display Sticky Menu anywhere on your website elegantly."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:26
+msgid "Dashboard"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:27
+#: ../admin/partials/catch-sticky-menu-admin-display.php:67
+msgid "Features"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:34
+msgid "Catch Themes & Catch Plugins Tabs"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:39
+msgid ""
+"If you want to turn off Catch Themes & Catch Plugins tabs option in Add "
+"Themes and Add Plugins page, please uncheck the following option."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:44
+msgid "Turn On Catch Themes & Catch Plugin tabs"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:72
+msgid "Menu Selector"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:73
+msgid ""
+"Catch Sticky Menu empowers you with Menu Selector (for desktop and mobile). "
+"A basic knowledge of HTMl/CSS is required as you need to pick the right "
+"selector for the element you want to make sticky. You can pick which element "
+"of your website to make sticky from the Inspect Element option. You can "
+"select the sticky element for desktop and mobile menu selector, separately."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:77
+#: ../admin/partials/dashboard-display.php:62
+msgid "Sticky Background Color"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:78
+msgid ""
+"Background colors play an important role when you’re trying to highlight "
+"something. Likewise, we’ve added the option to select the background color "
+"for your sticky menu. Select the background color from the unlimited color "
+"palette that best suits your website and its design to make your sticky menu "
+"stand out!"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:81
+msgid "Sticky Z Index"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:82
+msgid ""
+"Catch Sticky Menu supports Z Index option. You can add a sticky Z index "
+"easily if there are other elements on the page that hide or peek through "
+"your sticky element."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:85
+#: ../admin/partials/dashboard-display.php:90
+msgid "Sticky Opacity"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:86
+msgid ""
+"With the Sticky Opacity option available in Catch Sticky Menu, you can "
+"select the opacity level of your sticky menu. The more you decrease the "
+"opacity level, the more faded your sticky menu will look. You can select the "
+"opacity as per your preference."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:89
+msgid "Enable on Homepage only"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:90
+msgid ""
+"You can stick the menu either on the Homepage of your website only or on the "
+"entire website. Your sticky menu is enabled on the entire website by "
+"default. And if you want the sticky menu to be displayed only on the "
+"Homepage, checkmark the tiny box right next to the option."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:93
+msgid "Lightweight"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:94
+msgid ""
+"Catch Sticky Menu, a simple sticky menu plugin for WordPress is extremely "
+"lightweight. It means you will not have to worry about your website getting "
+"slower because of the plugin."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:97
+msgid "Responsive Design"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:98
+msgid ""
+"Catch Sticky Menu, our new WordPress plugin for sticky menu comes with a "
+"responsive design, which means the sticky menu trails will look elegant on "
+"all devices."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:101
+msgid "Compatible with all WordPress Themes"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:102
+msgid ""
+"Catch Sticky menu has been crafted in a way that supports all the themes on "
+"WordPress. The plugin functions smoothly on any WordPress theme."
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:105
+msgid "Incredible Support"
+msgstr ""
+
+#: ../admin/partials/catch-sticky-menu-admin-display.php:106
+msgid ""
+"We have a great line of support team and support documentation. You do not "
+"need to worry about how to use the plugins we provide, just refer to our "
+"Tech Support Forum. Further, if you need to do advanced customization to "
+"your website, you can always hire our customizer!"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:24
+msgid "Plugin Options Saved."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:42
+msgid " Desktop Menu Selector"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:46
+msgid "Sticky Menu will be displayed just before this selector."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:52
+msgid " Mobile Menu Selector"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:56
+msgid "Sticky Menu will be displayed just before this selector (in mobile)."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:72
+msgid "Sticky Menu Text Color"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:82
+msgid "Sticky Z index"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:85
+msgid ""
+"Sticky z-index helps to set the stack order of the element. An element with "
+"greater stack order is always in front."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:93
+msgid ""
+"Sticky Opacity helps to set the  transparency-level, 1 is not transparent at "
+"all where as 0 is completely transparent."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:98
+msgid "Desktop Font Size"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:102
+msgid "px"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:103
+msgid ""
+"Sets your desired font size to desktop menu text. Default is set to null, "
+"and takes theme's font size."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:108
+msgid "Mobile Font Size"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:112
+msgid "em"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:113
+msgid ""
+"Sets your desired font size to mobile menu text. Default is set to null, and "
+"takes theme's font size."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:117
+msgid "Enable Only On Home Page"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:120
+msgid "Check to enable"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:122
+msgid "Checking this option will display sticky menu on homepage/frontpage."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:128
+msgid "Reset Options"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:131
+msgid "Check to reset"
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:133
+msgid "Caution: Reset all settings to default."
+msgstr ""
+
+#: ../admin/partials/dashboard-display.php:138
+msgid "Save Changes"
+msgstr ""
+
+#: ../admin/partials/footer.php:4
+msgid "Catch Plugins"
+msgstr ""
+
+#: ../admin/partials/footer.php:9
+msgid "View Themes"
+msgstr ""
+
+#: ../admin/partials/footer.php:10
+msgid "View Plugins"
+msgstr ""
+
+#: ../admin/partials/footer.php:11
+msgid "Support"
+msgstr ""
+
+#: ../admin/partials/sidebar.php:3
+msgid "Recommendations"
+msgstr ""
+
+#: ../admin/partials/sidebar.php:8
+msgid "Premium Themes"
+msgstr ""
+
+#: ../admin/partials/sidebar.php:9
+msgid ""
+"Check out our simple, clean and responsive Premium WordPress Themes that "
+"come with an array of crucial features with a superior functionality."
+msgstr ""
+
+#: ../admin/partials/sidebar.php:9
+msgid "Check our premium themes."
+msgstr ""
+
+#: ../admin/partials/sidebar.php:15
+msgid "Free Themes"
+msgstr ""
+
+#: ../admin/partials/sidebar.php:16
+msgid ""
+"Check out our collection of Free WordPress Themes that are clean, simple and "
+"feature-rich."
+msgstr ""
+
+#: ../admin/partials/sidebar.php:16
+msgid "Check our free themes."
+msgstr ""
+
+#: ../admin/partials/sidebar.php:22
+msgid "Premium Plugins"
+msgstr ""
+
+#: ../admin/partials/sidebar.php:23
+msgid ""
+"Check out our secured Premium WordPress Plugins to enhance and add extra "
+"functionalities to your website. An exceptional way to get the most out of "
+"WordPress!"
+msgstr ""
+
+#: ../admin/partials/sidebar.php:23
+msgid "Check our premium plugins."
+msgstr ""
+
+#: ../admin/partials/sidebar.php:31
+msgid "Free Plugins"
+msgstr ""
+
+#: ../admin/partials/sidebar.php:32
+msgid ""
+"Check out our Free WordPress Plugins and get the taste of our service "
+"without affecting your wallet."
+msgstr ""
+
+#: ../admin/partials/sidebar.php:33
+msgid "check our free plugins."
+msgstr ""
+
+#: ../includes/CatchThemesThemePlugin.php:154
+msgid "Themes by CatchThemes"
+msgstr ""
+
+#: ../includes/CatchThemesThemePlugin.php:434
+msgctxt "Plugin Installer"
+msgid "Catch Plugins"
+msgstr ""
+
+#: ../includes/CatchThemesThemePlugin.php:473
+#, php-format
+msgid ""
+"You can use any of our free plugins or premium plugins from <a href=\"%s\" "
+"target=\"_blank\">Catch Plugins</a>"
+msgstr ""
+
+#: ../includes/ctp-tabs-removal.php:59
+msgid "Invalid Nonce"
+msgstr ""
+
+#: ../includes/ctp-tabs-removal.php:62
+msgid "Permission denied!"
+msgstr ""
+
+#: ../includes/ctp-tabs-removal.php:75
+msgid "Connection Error. Please try again."
+msgstr ""
