@@ -16,7 +16,7 @@
  * Plugin Name:       Catch Sticky Menu
  * Plugin URI:        catchplugins.com/plugins/catch-sticky-menu
  * Description:       Catch Sticky Menu is a lightweight, simple yet feature-rich free WordPress plugin for sticky menu that allows you to lock the menu (or any other element) on your website. Prevent your menu from disappearing when users scroll down the page!
- * Version:           1.7.4
+ * Version:           1.7.5
  * Author:            Catch Plugins
  * Author URI:        catchplugins.com
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CATCH_STICKY_MENU_VERSION', '1.7.4' );
+define( 'CATCH_STICKY_MENU_VERSION', '1.7.5' );
 
 /**
  * The code that runs during plugin activation.
