@@ -3,8 +3,8 @@ Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshma
 Donate link: https://catchplugins.com/plugins/catch-sticky-menu/
 Tags: sticky, sticky-menu, fixed, navigation
 Requires at least: 5.9
-Tested up to: 6.8
-Stable tag: trunk
+Tested up to: 6.9
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,14 @@ Not so easy way (via FTP) :
 * Go to **Catch Sticky Menu** from Dashboard menu
 
 == Changelog ==
+
+= 1.8 (Released: February 24, 2026) =
+* Bug Fixed: Fixed JS enqueue path for adding catch themes tab item in Themes add theme section
+* Bug Fixed: WordPress.Security.EscapeOutput.OutputNotEscaped
+* Bug Fixed: missing_direct_file_access_protection
+* Bug Fixed: WordPress.WP.I18n.TextDomainMismatch
+* Bug Fixed: plugin_header_invalid_plugin_uri
+* Compatibility check up to version 6.9
 
 = 1.7.5 (Released: May 13, 2025) =
 * Compatibility check up to version 6.8
