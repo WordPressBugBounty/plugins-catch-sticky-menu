@@ -16,7 +16,7 @@
  * Plugin Name:       Catch Sticky Menu
  * Plugin URI:        https://catchplugins.com/plugins/catch-sticky-menu
  * Description:       Catch Sticky Menu is a lightweight, simple yet feature-rich free WordPress plugin for sticky menu that allows you to lock the menu (or any other element) on your website. Prevent your menu from disappearing when users scroll down the page!
- * Version:           1.8
+ * Version:           2.0
  * Author:            Catch Plugins
  * Author URI:        https://catchplugins.com
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if (! defined('WPINC')) {
  * Rename this for your plugin and update it as you release new versions.
  */
 if ( ! defined( 'CATCH_STICKY_MENU_VERSION' ) ) {
-	define( 'CATCH_STICKY_MENU_VERSION', '1.8' );
+	define( 'CATCH_STICKY_MENU_VERSION', '2.0' );
 }
 
 /**
@@ -60,7 +60,7 @@ if (! defined('CATCH_STICKY_MENU_BASENAME')) {
 	define('CATCH_STICKY_MENU_BASENAME', plugin_basename(__FILE__));
 }
 
-function activate_catch_sticky_menu()
+function catch_sticky_menu_activate()
 {
 	require_once plugin_dir_path(__FILE__) . 'includes/class-catch-sticky-menu-activator.php';
 	Catch_Sticky_Menu_Activator::activate();
@@ -70,14 +70,14 @@ function activate_catch_sticky_menu()
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-catch-sticky-menu-deactivator.php
  */
-function deactivate_catch_sticky_menu()
+function catch_sticky_menu_deactivate()
 {
 	require_once plugin_dir_path(__FILE__) . 'includes/class-catch-sticky-menu-deactivator.php';
 	Catch_Sticky_Menu_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_catch_sticky_menu');
-register_deactivation_hook(__FILE__, 'deactivate_catch_sticky_menu');
+register_activation_hook(__FILE__, 'catch_sticky_menu_activate');
+register_deactivation_hook(__FILE__, 'catch_sticky_menu_deactivate');
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -94,7 +94,7 @@ require plugin_dir_path(__FILE__) . 'includes/class-catch-sticky-menu.php';
  *
  * @since    1.0.0
  */
-function sticky_menu_sanitize_checkbox($checked)
+function catch_sticky_menu_sanitize_checkbox($checked)
 {
 	// Boolean check.
 	return ((isset($checked) && true == $checked) ? true : false);
@@ -148,18 +148,17 @@ if (! function_exists('catch_sticky_menu_default_options')) :
 	}
 endif; // sticky_menu_default_options
 
-function run_catch_sticky_menu()
+function catch_sticky_menu_run()
 {
-
 	$plugin = new Catch_Sticky_Menu();
 	$plugin->run();
 }
-run_catch_sticky_menu();
+catch_sticky_menu_run();
 /* CTP tabs removal options */
 require plugin_dir_path(__FILE__) . '/includes/ctp-tabs-removal.php';
 
-$ctp_options = ctp_get_options();
-if (1 == $ctp_options['theme_plugin_tabs']) {
+$catch_sticky_menu_ctp_options = ctp_get_options();
+if (1 == $catch_sticky_menu_ctp_options['theme_plugin_tabs']) {
 	/* Adds Catch Themes tab in Add theme page and Themes by Catch Themes in Customizer's change theme option. */
 	if (! class_exists('CatchThemesThemePlugin') && ! function_exists('add_our_plugins_tab')) {
 		require plugin_dir_path(__FILE__) . '/includes/CatchThemesThemePlugin.php';

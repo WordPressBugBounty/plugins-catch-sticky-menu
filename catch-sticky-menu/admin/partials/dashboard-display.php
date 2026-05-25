@@ -22,20 +22,17 @@ if (! defined('ABSPATH')) exit;
 			<h2><?php esc_html_e('Settings', 'catch-sticky-menu'); ?></h2>
 		</div> <!-- .Header -->
 		<div class="content">
-			<?php if (isset($_GET['settings-updated'])) { ?>
+			<?php // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display check, no data processing.
+			if (isset($_GET['settings-updated'])) { ?>
 				<div id="message" class="notice updated fade">
 					<p><strong><?php esc_html_e('Plugin Options Saved.', 'catch-sticky-menu') ?></strong></p>
 				</div>
 			<?php } ?>
-			<?php // Use nonce for verification.
-			wp_nonce_field(basename(__FILE__), 'catch_sticky_menu_nounce');
-			?>
 			<div id="sticky_main">
 				<form method="post" action="options.php">
 					<?php settings_fields('catch-sticky-menu-group'); ?>
 					<?php
-					$defaults = catch_sticky_menu_default_options();
-					$settings = catch_sticky_menu_get_options();
+					$catch_sticky_menu_settings = catch_sticky_menu_get_options();
 					?>
 					<div class="option-container">
 						<table class="form-table" bgcolor="white">
@@ -45,7 +42,7 @@ if (! defined('ABSPATH')) exit;
 										<label><?php esc_html_e(' Desktop Menu Selector', 'catch-sticky-menu'); ?></label>
 									</th>
 									<td>
-										<input type="text" name="catch_sticky_menu_options[sticky_desktop_menu_selector]" id="sticky-desktop-menu-selector" class="sticky-desktop-menu-selector" value="<?php echo esc_attr($settings['sticky_desktop_menu_selector']); ?>" />
+										<input type="text" name="catch_sticky_menu_options[sticky_desktop_menu_selector]" id="sticky-desktop-menu-selector" class="sticky-desktop-menu-selector" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_desktop_menu_selector']); ?>" />
 										<span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sticky Menu will be displayed just before this selector.', 'catch-sticky-menu'); ?>"></span>
 									</td>
 								</tr>
@@ -55,7 +52,7 @@ if (! defined('ABSPATH')) exit;
 										<label><?php esc_html_e(' Mobile Menu Selector', 'catch-sticky-menu'); ?></label>
 									</th>
 									<td>
-										<input type="text" name="catch_sticky_menu_options[sticky_mobile_menu_selector]" id="sticky-mobile-menu-selector" class="sticky-mobile-menu-selector" value="<?php echo esc_attr($settings['sticky_mobile_menu_selector']); ?>" />
+										<input type="text" name="catch_sticky_menu_options[sticky_mobile_menu_selector]" id="sticky-mobile-menu-selector" class="sticky-mobile-menu-selector" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_mobile_menu_selector']); ?>" />
 										<span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sticky Menu will be displayed just before this selector (in mobile).', 'catch-sticky-menu'); ?>"></span>
 									</td>
 								</tr>
@@ -65,7 +62,7 @@ if (! defined('ABSPATH')) exit;
 									<label><?php esc_html_e('Sticky Background Color', 'catch-sticky-menu'); ?></label>
 								</th>
 								<td>
-									<input type="text" name="catch_sticky_menu_options[sticky_background_color]" id="sticky-background-color" class="color-picker" data-alpha="true" value="<?php echo esc_attr($settings['sticky_background_color']); ?>" />
+									<input type="text" name="catch_sticky_menu_options[sticky_background_color]" id="sticky-background-color" class="color-picker" data-alpha="true" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_background_color']); ?>" />
 								</td>
 								</tr>
 								</tr>
@@ -75,7 +72,7 @@ if (! defined('ABSPATH')) exit;
 									<label><?php esc_html_e('Sticky Menu Text Color', 'catch-sticky-menu'); ?></label>
 								</th>
 								<td>
-									<input type="text" name="catch_sticky_menu_options[sticky_text_color]" id="sticky-text-color" class="color-picker" data-alpha="true" value="<?php echo esc_attr($settings['sticky_text_color']); ?>" />
+									<input type="text" name="catch_sticky_menu_options[sticky_text_color]" id="sticky-text-color" class="color-picker" data-alpha="true" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_text_color']); ?>" />
 								</td>
 								</tr>
 
@@ -85,7 +82,7 @@ if (! defined('ABSPATH')) exit;
 										<label><?php esc_html_e('Sticky Z index', 'catch-sticky-menu'); ?></label>
 									</th>
 									<td>
-										<input type="number" min="-100" max="2147483647" step="1" name="catch_sticky_menu_options[sticky_z_index]" id="sticky-z-index" class="color-z-index" data-alpha="true" value="<?php echo esc_attr($settings['sticky_z_index']); ?>" /><span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sticky z-index helps to set the stack order of the element. An element with greater stack order is always in front.', 'catch-sticky-menu'); ?>"></span>
+										<input type="number" min="-100" max="2147483647" step="1" name="catch_sticky_menu_options[sticky_z_index]" id="sticky-z-index" class="color-z-index" data-alpha="true" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_z_index']); ?>" /><span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sticky z-index helps to set the stack order of the element. An element with greater stack order is always in front.', 'catch-sticky-menu'); ?>"></span>
 									</td>
 								</tr>
 								<tr>
@@ -93,7 +90,7 @@ if (! defined('ABSPATH')) exit;
 										<label><?php esc_html_e('Sticky Opacity', 'catch-sticky-menu'); ?></label>
 									</th>
 									<td>
-										<input type="number" min="0" max="1" step="0.1" name="catch_sticky_menu_options[sticky_opacity]" id="sticky-opacity" class="color-opacity" data-alpha="true" value="<?php echo esc_attr($settings['sticky_opacity']); ?>" /><span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sticky Opacity helps to set the  transparency-level, 1 is not transparent at all where as 0 is completely transparent.', 'catch-sticky-menu'); ?>"></span>
+										<input type="number" min="0" max="1" step="0.1" name="catch_sticky_menu_options[sticky_opacity]" id="sticky-opacity" class="color-opacity" data-alpha="true" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_opacity']); ?>" /><span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sticky Opacity helps to set the  transparency-level, 1 is not transparent at all where as 0 is completely transparent.', 'catch-sticky-menu'); ?>"></span>
 									</td>
 								</tr>
 								<tr>
@@ -101,7 +98,7 @@ if (! defined('ABSPATH')) exit;
 										<label><?php esc_html_e('Desktop Font Size', 'catch-sticky-menu'); ?></label>
 									</th>
 									<td>
-										<input type="number" name="catch_sticky_menu_options[sticky_desktop_font_size]" id="sticky-text-font-size" placeholder="12px" class="sticky-desktop-font-size numbers-only" value="<?php echo esc_attr($settings['sticky_desktop_font_size']); ?>" />
+										<input type="number" name="catch_sticky_menu_options[sticky_desktop_font_size]" id="sticky-text-font-size" placeholder="12px" class="sticky-desktop-font-size numbers-only" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_desktop_font_size']); ?>" />
 										<span class="add-on"><?php esc_html_e('px', 'catch-sticky-menu'); ?></span>
 										<span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sets your desired font size to desktop menu text. Default is set to null, and takes theme\'s font size.', 'catch-sticky-menu'); ?>"></span>
 									</td>
@@ -111,7 +108,7 @@ if (! defined('ABSPATH')) exit;
 										<label><?php esc_html_e('Mobile Font Size', 'catch-sticky-menu'); ?></label>
 									</th>
 									<td>
-										<input type="number" name="catch_sticky_menu_options[sticky_mobile_font_size]" id="sticky-mobile-font-size" placeholder="1em" step="0.1" class="sticky-mobile-font-size numbers-only" value="<?php echo esc_attr($settings['sticky_mobile_font_size']); ?>" />
+										<input type="number" name="catch_sticky_menu_options[sticky_mobile_font_size]" id="sticky-mobile-font-size" placeholder="1em" step="0.1" class="sticky-mobile-font-size numbers-only" value="<?php echo esc_attr($catch_sticky_menu_settings['sticky_mobile_font_size']); ?>" />
 										<span class="add-on"><?php esc_html_e('em', 'catch-sticky-menu'); ?></span>
 										<span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Sets your desired font size to mobile menu text. Default is set to null, and takes theme\'s font size.', 'catch-sticky-menu'); ?>"></span>
 									</td>
@@ -119,8 +116,8 @@ if (! defined('ABSPATH')) exit;
 								<tr>
 									<th scope="row"><?php esc_html_e('Enable Only On Home Page', 'catch-sticky-menu'); ?></th>
 									<td>
-										<?php $text   =   (! empty($settings['enable_only_on_home']) && $settings['enable_only_on_home']) ? 'checked' : '';
-										echo '<input type="checkbox" ' . esc_attr($text) . ' name="catch_sticky_menu_options[enable_only_on_home]" value="1"/>' . esc_html__('Check to enable', 'catch-sticky-menu');
+										<?php $catch_sticky_menu_text = (! empty($catch_sticky_menu_settings['enable_only_on_home']) && $catch_sticky_menu_settings['enable_only_on_home']) ? 'checked' : '';
+										echo '<input type="checkbox" ' . esc_attr($catch_sticky_menu_text) . ' name="catch_sticky_menu_options[enable_only_on_home]" value="1"/>' . esc_html__('Check to enable', 'catch-sticky-menu');
 										?>
 										<span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Checking this option will display sticky menu on homepage/frontpage.', 'catch-sticky-menu'); ?>"></span>
 									</td>

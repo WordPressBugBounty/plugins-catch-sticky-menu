@@ -48,7 +48,6 @@
 		if($(window).width() < 768){ // Mobile
 			
 			if( ! $(sticky_object.sticky_mobile_menu_selector).length ) {
-				console.log('Catch Sticky menu: Entered Sticky Element for mobile does not exist, change it in Dashboard / Settings / Catch Sticky Menu / Mobile Menu Selector.');
 				return;
 			}
 
@@ -113,7 +112,6 @@
 		else { // Desktop
 			
 			if( ! $(sticky_object.sticky_desktop_menu_selector).length ) {
-				console.log('Catch Sticky menu: Entered Sticky Element for desktop does not exist, change it in Dashboard / Settings / Catch Sticky Menu / Desktop Menu Selector.');
 				return;
 			}
 

@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if (! defined('ABSPATH')) exit;
+
 /**
  * Define the internationalization functionality
  *
@@ -33,13 +36,8 @@ class Catch_Sticky_Menu_i18n {
 	 * @since    1.0.0
 	 */
 	public function load_plugin_textdomain() {
-
-		load_plugin_textdomain(
-			'catch-sticky-menu',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
-
+		// Intentionally empty. Since WordPress 4.6, translations for plugins
+		// hosted on WordPress.org are loaded automatically.
 	}
 
 

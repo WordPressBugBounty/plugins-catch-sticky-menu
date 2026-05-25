@@ -42,8 +42,11 @@ class CatchThemesThemePlugin
 			wp_send_json_error();
 		}
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- nonce is verified by core before this callback runs.
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized by themes_api() below.
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated -- verified non-empty by core before this callback runs.
 		$args = wp_parse_args(
-			wp_unslash($_REQUEST['request']),
+			isset($_REQUEST['request']) ? wp_unslash($_REQUEST['request']) : array(), // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- core AJAX handler, sanitized by themes_api().
 			array(
 				'per_page' => 20,
 				'fields'   => array_merge(
@@ -70,7 +73,7 @@ class CatchThemesThemePlugin
 		$old_filter = isset($args['browse']) ? $args['browse'] : 'search';
 
 		/** This filter is documented in wp-admin/includes/class-wp-theme-install-list-table.php */
-		$args = apply_filters('install_themes_table_api_args_' . $old_filter, $args);
+		$args = apply_filters('install_themes_table_api_args_' . $old_filter, $args); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core hook.
 
 		$api = themes_api('query_themes', $args);
 
@@ -146,7 +149,7 @@ class CatchThemesThemePlugin
 	{
 
 		if ('theme-install.php' === $hook_suffix) {
-			wp_enqueue_script('our-themes-script', plugin_dir_url(__FILE__) . '../admin/js/our-themes.js', array('jquery'), '2018-05-16');
+			wp_enqueue_script('our-themes-script', plugin_dir_url(__FILE__) . '../admin/js/our-themes.js', array('jquery'), '2018-05-16', false);
 		}
 	}
 
@@ -186,7 +189,7 @@ class CatchThemesThemePlugin
 		if (empty($_POST['theme_action'])) {
 			wp_send_json_error('missing_theme_action');
 		}
-		$theme_action = sanitize_key($_POST['theme_action']);
+		$theme_action = sanitize_key(wp_unslash($_POST['theme_action'])); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated -- guarded by empty() check above.
 		$themes       = array();
 		$args         = array();
 
@@ -217,7 +220,8 @@ class CatchThemesThemePlugin
 			$themes = array('themes' => wp_prepare_themes_for_js());
 			foreach ($themes['themes'] as &$theme) {
 				$theme['type']   = 'installed';
-				$theme['active'] = (isset($_POST['customized_theme']) && $_POST['customized_theme'] === $theme['id']);
+				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- comparison only, not saved or displayed.
+			$theme['active'] = (isset($_POST['customized_theme']) && $_POST['customized_theme'] === $theme['id']);
 			}
 		} elseif ('catchthemes' === $theme_action) {
 
@@ -298,6 +302,7 @@ class CatchThemesThemePlugin
 				}
 
 				// Set active based on customized theme.
+				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- comparison only, not saved or displayed.
 				$theme->active = (isset($_POST['customized_theme']) && $_POST['customized_theme'] === $theme->slug);
 
 				// Map available theme properties to installed theme properties.
@@ -393,6 +398,7 @@ class CatchThemesThemePlugin
 				}
 
 				// Set active based on customized theme.
+				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- comparison only, not saved or displayed.
 				$theme->active = (isset($_POST['customized_theme']) && $_POST['customized_theme'] === $theme->slug);
 
 				// Map available theme properties to installed theme properties.
@@ -430,7 +436,7 @@ class CatchThemesThemePlugin
 		 * @param array                $args    List of arguments, such as page, search term, and tags to query for.
 		 * @param WP_Customize_Manager $manager Instance of Customize manager.
 		 */
-		$themes = apply_filters('customize_load_themes', $themes, $args, $wp_customize);
+		$themes = apply_filters('customize_load_themes', $themes, $args, $wp_customize); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core hook.
 
 		wp_send_json_success($themes);
 	}
@@ -496,4 +502,4 @@ class CatchThemesThemePlugin
 	}
 }
 
-$catchthemes_theme_plugin = new CatchThemesThemePlugin();
+$catch_sticky_menu_catchthemes_theme_plugin = new CatchThemesThemePlugin();

@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if (! defined('ABSPATH')) exit;
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -96,7 +99,7 @@ class Catch_Sticky_Menu_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/catch-sticky-menu-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/catch-sticky-menu-public.js', array( 'jquery' ), $this->version, true );
 
 	}
 	public function catch_stickymenu() {

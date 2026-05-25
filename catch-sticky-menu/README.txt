@@ -3,8 +3,9 @@ Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshma
 Donate link: https://catchplugins.com/plugins/catch-sticky-menu/
 Tags: sticky, sticky-menu, fixed, navigation
 Requires at least: 5.9
-Tested up to: 6.9
-Stable tag: 1.8
+Requires PHP: 7.4
+Tested up to: 7.0
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +41,20 @@ Not so easy way (via FTP) :
 * Go to **Catch Sticky Menu** from Dashboard menu
 
 == Changelog ==
+
+= 2.0 (Released: May 25, 2026) =
+* Bug Fixed: Settings could not be saved reliably due to broken nonce verification logic inside the settings callback — nonce is now handled correctly by the Settings API
+* Bug Fixed: Nested HTML form tags on the settings page caused invalid markup and unpredictable browser behaviour — outer wrapper is now a div
+* Bug Fixed: Catch Themes/Plugins tab toggle passed unsanitized values through AJAX, leaving the saved option name open to injection
+* Bug Fixed: Dynamic CSS class on the admin toggle was output without escaping
+* Bug Fixed: Public-facing JavaScript was enqueued in the document head instead of the footer
+* Bug Fixed: PHP function name lacked required plugin prefix, risking conflicts with other plugins
+* Bug Fixed: Several variable names at global scope lacked the required plugin prefix
+* Bug Fixed: Direct file access protection missing from public class and internationalization class files
+* Bug Fixed: Translations were being loaded manually, overriding WordPress's automatic translation loading (deprecated since WordPress 4.6)
+* Bug Fixed: Added missing in_footer parameter to admin theme-browser script enqueue
+* Bug Fixed: Removed console.log debug statements from public JavaScript
+* Compatibility check up to version 7.0
 
 = 1.8 (Released: February 24, 2026) =
 * Bug Fixed: Fixed JS enqueue path for adding catch themes tab item in Themes add theme section

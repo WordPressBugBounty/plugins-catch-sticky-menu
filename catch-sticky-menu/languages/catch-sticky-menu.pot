@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Sticky Menu\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2026-02-24 15:32+0545\n"
+"POT-Creation-Date: 2026-05-25 19:37+0545\n"
 "PO-Revision-Date: 2016-12-12 09:23-0500\n"
 "Last-Translator: Sakin Shrestha <info@catchplugins.com>\n"
 "Language-Team: Catch Plugins <info@catchplugins.com>\n"
@@ -14,27 +14,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-KeywordsList: "
 "__;_e;_n:1,2;_x:1,2c;esc_attr_e;esc_attr__;_nx;_x;esc_html_e;esc_html__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_n_noop:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-catch-sticky-menu-admin.php:114
-#: ../admin/class-catch-sticky-menu-admin.php:135
+#: ../admin/class-catch-sticky-menu-admin.php:116
+#: ../admin/class-catch-sticky-menu-admin.php:137
 #: ../admin/partials/dashboard-display.php:22
 msgid "Settings"
 msgstr ""
 
-#: ../admin/class-catch-sticky-menu-admin.php:124
-#: ../admin/class-catch-sticky-menu-admin.php:125
-#: ../admin/class-catch-sticky-menu-admin.php:134
+#: ../admin/class-catch-sticky-menu-admin.php:126
+#: ../admin/class-catch-sticky-menu-admin.php:127
+#: ../admin/class-catch-sticky-menu-admin.php:136
 #: ../admin/partials/catch-sticky-menu-admin-display.php:21
 msgid "Catch Sticky Menu"
 msgstr ""
 
-#: ../admin/class-catch-sticky-menu-admin.php:146
+#: ../admin/class-catch-sticky-menu-admin.php:148
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
@@ -47,7 +47,7 @@ msgid "Dashboard"
 msgstr ""
 
 #: ../admin/partials/catch-sticky-menu-admin-display.php:30
-#: ../admin/partials/catch-sticky-menu-admin-display.php:70
+#: ../admin/partials/catch-sticky-menu-admin-display.php:71
 msgid "Features"
 msgstr ""
 
@@ -65,11 +65,11 @@ msgstr ""
 msgid "Turn On Catch Themes & Catch Plugin tabs"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:75
+#: ../admin/partials/catch-sticky-menu-admin-display.php:76
 msgid "Menu Selector"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:76
+#: ../admin/partials/catch-sticky-menu-admin-display.php:77
 msgid ""
 "Catch Sticky Menu empowers you with Menu Selector (for desktop and mobile). "
 "A basic knowledge of HTMl/CSS is required as you need to pick the right "
@@ -78,12 +78,12 @@ msgid ""
 "select the sticky element for desktop and mobile menu selector, separately."
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:80
-#: ../admin/partials/dashboard-display.php:65
+#: ../admin/partials/catch-sticky-menu-admin-display.php:81
+#: ../admin/partials/dashboard-display.php:62
 msgid "Sticky Background Color"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:81
+#: ../admin/partials/catch-sticky-menu-admin-display.php:82
 msgid ""
 "Background colors play an important role when you’re trying to highlight "
 "something. Likewise, we’ve added the option to select the background color "
@@ -92,23 +92,23 @@ msgid ""
 "stand out!"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:84
+#: ../admin/partials/catch-sticky-menu-admin-display.php:85
 msgid "Sticky Z Index"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:85
+#: ../admin/partials/catch-sticky-menu-admin-display.php:86
 msgid ""
 "Catch Sticky Menu supports Z Index option. You can add a sticky Z index "
 "easily if there are other elements on the page that hide or peek through "
 "your sticky element."
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:88
-#: ../admin/partials/dashboard-display.php:93
+#: ../admin/partials/catch-sticky-menu-admin-display.php:89
+#: ../admin/partials/dashboard-display.php:90
 msgid "Sticky Opacity"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:89
+#: ../admin/partials/catch-sticky-menu-admin-display.php:90
 msgid ""
 "With the Sticky Opacity option available in Catch Sticky Menu, you can "
 "select the opacity level of your sticky menu. The more you decrease the "
@@ -116,11 +116,11 @@ msgid ""
 "opacity as per your preference."
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:92
+#: ../admin/partials/catch-sticky-menu-admin-display.php:93
 msgid "Enable on Homepage only"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:93
+#: ../admin/partials/catch-sticky-menu-admin-display.php:94
 msgid ""
 "You can stick the menu either on the Homepage of your website only or on the "
 "entire website. Your sticky menu is enabled on the entire website by "
@@ -128,43 +128,43 @@ msgid ""
 "Homepage, checkmark the tiny box right next to the option."
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:96
+#: ../admin/partials/catch-sticky-menu-admin-display.php:97
 msgid "Lightweight"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:97
+#: ../admin/partials/catch-sticky-menu-admin-display.php:98
 msgid ""
 "Catch Sticky Menu, a simple sticky menu plugin for WordPress is extremely "
 "lightweight. It means you will not have to worry about your website getting "
 "slower because of the plugin."
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:100
+#: ../admin/partials/catch-sticky-menu-admin-display.php:101
 msgid "Responsive Design"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:101
+#: ../admin/partials/catch-sticky-menu-admin-display.php:102
 msgid ""
 "Catch Sticky Menu, our new WordPress plugin for sticky menu comes with a "
 "responsive design, which means the sticky menu trails will look elegant on "
 "all devices."
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:104
+#: ../admin/partials/catch-sticky-menu-admin-display.php:105
 msgid "Compatible with all WordPress Themes"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:105
+#: ../admin/partials/catch-sticky-menu-admin-display.php:106
 msgid ""
 "Catch Sticky menu has been crafted in a way that supports all the themes on "
 "WordPress. The plugin functions smoothly on any WordPress theme."
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:108
+#: ../admin/partials/catch-sticky-menu-admin-display.php:109
 msgid "Incredible Support"
 msgstr ""
 
-#: ../admin/partials/catch-sticky-menu-admin-display.php:109
+#: ../admin/partials/catch-sticky-menu-admin-display.php:110
 msgid ""
 "We have a great line of support team and support documentation. You do not "
 "need to worry about how to use the plugins we provide, just refer to our "
@@ -172,99 +172,99 @@ msgid ""
 "your website, you can always hire our customizer!"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:27
+#: ../admin/partials/dashboard-display.php:28
 msgid "Plugin Options Saved."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:45
+#: ../admin/partials/dashboard-display.php:42
 msgid " Desktop Menu Selector"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:49
+#: ../admin/partials/dashboard-display.php:46
 msgid "Sticky Menu will be displayed just before this selector."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:55
+#: ../admin/partials/dashboard-display.php:52
 msgid " Mobile Menu Selector"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:59
+#: ../admin/partials/dashboard-display.php:56
 msgid "Sticky Menu will be displayed just before this selector (in mobile)."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:75
+#: ../admin/partials/dashboard-display.php:72
 msgid "Sticky Menu Text Color"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:85
+#: ../admin/partials/dashboard-display.php:82
 msgid "Sticky Z index"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:88
+#: ../admin/partials/dashboard-display.php:85
 msgid ""
 "Sticky z-index helps to set the stack order of the element. An element with "
 "greater stack order is always in front."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:96
+#: ../admin/partials/dashboard-display.php:93
 msgid ""
 "Sticky Opacity helps to set the  transparency-level, 1 is not transparent at "
 "all where as 0 is completely transparent."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:101
+#: ../admin/partials/dashboard-display.php:98
 msgid "Desktop Font Size"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:105
+#: ../admin/partials/dashboard-display.php:102
 msgid "px"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:106
+#: ../admin/partials/dashboard-display.php:103
 msgid ""
 "Sets your desired font size to desktop menu text. Default is set to null, "
 "and takes theme's font size."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:111
+#: ../admin/partials/dashboard-display.php:108
 msgid "Mobile Font Size"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:115
+#: ../admin/partials/dashboard-display.php:112
 msgid "em"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:116
+#: ../admin/partials/dashboard-display.php:113
 msgid ""
 "Sets your desired font size to mobile menu text. Default is set to null, and "
 "takes theme's font size."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:120
+#: ../admin/partials/dashboard-display.php:117
 msgid "Enable Only On Home Page"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:123
+#: ../admin/partials/dashboard-display.php:120
 msgid "Check to enable"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:125
+#: ../admin/partials/dashboard-display.php:122
 msgid "Checking this option will display sticky menu on homepage/frontpage."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:131
+#: ../admin/partials/dashboard-display.php:128
 msgid "Reset Options"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:134
+#: ../admin/partials/dashboard-display.php:131
 msgid "Check to reset"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:136
+#: ../admin/partials/dashboard-display.php:133
 msgid "Caution: Reset all settings to default."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:141
+#: ../admin/partials/dashboard-display.php:138
 msgid "Save Changes"
 msgstr ""
 
@@ -345,30 +345,30 @@ msgstr ""
 msgid "check our free plugins."
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:161
+#: ../includes/CatchThemesThemePlugin.php:164
 msgid "Themes by CatchThemes"
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:443
+#: ../includes/CatchThemesThemePlugin.php:449
 msgctxt "Plugin Installer"
 msgid "Catch Plugins"
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:487
+#: ../includes/CatchThemesThemePlugin.php:493
 #, php-format
 msgid ""
 "You can use any of our free plugins or premium plugins from <a href=\"%s\" "
 "target=\"_blank\">Catch Plugins</a>."
 msgstr ""
 
-#: ../includes/ctp-tabs-removal.php:63
+#: ../includes/ctp-tabs-removal.php:67
 msgid "Invalid Nonce"
 msgstr ""
 
-#: ../includes/ctp-tabs-removal.php:66
+#: ../includes/ctp-tabs-removal.php:70
 msgid "Permission denied!"
 msgstr ""
 
-#: ../includes/ctp-tabs-removal.php:79
+#: ../includes/ctp-tabs-removal.php:83
 msgid "Connection Error. Please try again."
 msgstr ""

@@ -30,9 +30,9 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-$option_name = 'catch_sticky_menu_options';
+$catch_sticky_menu_option_name = 'catch_sticky_menu_options';
 
-delete_option( $option_name );
+delete_option( $catch_sticky_menu_option_name );
 
 // For site options in Multisite.
-delete_site_option( $option_name );
+delete_site_option( $catch_sticky_menu_option_name );

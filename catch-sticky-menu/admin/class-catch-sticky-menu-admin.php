@@ -69,6 +69,7 @@ class Catch_Sticky_Menu_Admin
 		 * class.
 		 */
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only routing check, no data processing.
 		if (isset($_GET['page']) && 'catch-sticky-menu' == $_GET['page']) {
 			wp_enqueue_style($this->plugin_name . '-display-dashboard', plugin_dir_url(__FILE__) . 'css/catch-sticky-menu-admin.css', array(), $this->version, 'all');
 		}
@@ -93,6 +94,7 @@ class Catch_Sticky_Menu_Admin
 		 * class.
 		 */
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only routing check, no data processing.
 		if (isset($_GET['page']) && 'catch-sticky-menu' == $_GET['page']) {
 			wp_enqueue_script('matchHeight', plugin_dir_url(__FILE__) . 'js/jquery-matchHeight.min.js', array('jquery'), $this->version, false);
 			wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/catch-sticky-menu-admin.js', array('jquery', 'matchHeight', 'jquery-ui-tooltip'), $this->version, false);
@@ -160,47 +162,55 @@ class Catch_Sticky_Menu_Admin
 	public function sanitize_callback($input)
 	{
 		if (isset($input['reset']) && $input['reset']) {
-			//If reset, restore defaults
+			// If reset, restore defaults.
 			return catch_sticky_menu_default_options();
 		}
-		$message = null;
-		$type    = null;
 
-		// Verify the nonce before proceeding.
-		if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-			|| (! isset($_POST['catch_sticky_menu_nounce'])
-				|| ! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['catch_sticky_menu_nounce'])), basename(__FILE__)))
-			|| (! check_admin_referer(basename(__FILE__), 'catch_sticky_menu_nounce'))
-		) {
-			if (null !== $input) {
-
-				$input['status']                       = (isset($input['status']) && '1' == $input['status']) ? '1' : '0';
-				if (isset($input['sticky_desktop_menu_selector'])) {
-					$input['sticky_desktop_menu_selector'] = sanitize_text_field($input['sticky_desktop_menu_selector']);
-				}
-				if (isset($input['sticky_mobile_menu_selector'])) {
-					$input['sticky_mobile_menu_selector']  = sanitize_text_field($input['sticky_mobile_menu_selector']);
-				}
-				if (isset($input['sticky_background_color']) && $input['sticky_background_color']) {
-					$input['sticky_background_color']      = sanitize_hex_color($input['sticky_background_color']);
-				}
-				if (isset($input['sticky_text_color']) && $input['sticky_text_color']) {
-					$input['sticky_text_color']            = sanitize_hex_color($input['sticky_text_color']);
-				}
-				if (isset($input['sticky_z_index']) && $input['sticky_z_index']) {
-					$input['sticky_z_index']               = intval($input['sticky_z_index']);
-				}
-				if (isset($input['sticky_opacity']) && $input['sticky_opacity']) {
-					$input['sticky_opacity']               = floatval($input['sticky_opacity']);
-				}
-				if (isset($input['enable_only_on_home']) && $input['enable_only_on_home']) {
-					$input['enable_only_on_home']          = sanitize_key($input['enable_only_on_home']);
-				}
-
-				return $input;
-			}
-			return 'Invalid Nonce';
+		// Nonce already verified by the Settings API (options.php) before this callback runs.
+		if (null === $input) {
+			return catch_sticky_menu_default_options();
 		}
+
+		$input['sticky_desktop_menu_selector'] = isset($input['sticky_desktop_menu_selector'])
+			? sanitize_text_field($input['sticky_desktop_menu_selector'])
+			: '';
+
+		$input['sticky_mobile_menu_selector'] = isset($input['sticky_mobile_menu_selector'])
+			? sanitize_text_field($input['sticky_mobile_menu_selector'])
+			: '';
+
+		$input['sticky_background_color'] = (isset($input['sticky_background_color']) && $input['sticky_background_color'])
+			? sanitize_hex_color($input['sticky_background_color'])
+			: '';
+
+		$input['sticky_text_color'] = (isset($input['sticky_text_color']) && $input['sticky_text_color'])
+			? sanitize_hex_color($input['sticky_text_color'])
+			: '';
+
+		// z-index allows negative values (min: -100).
+		$input['sticky_z_index'] = isset($input['sticky_z_index'])
+			? intval($input['sticky_z_index'])
+			: 199;
+
+		$input['sticky_opacity'] = isset($input['sticky_opacity'])
+			? (float) $input['sticky_opacity']
+			: 1.0;
+
+		// Numeric font sizes — empty string is valid (means "use theme default").
+		$input['sticky_desktop_font_size'] = isset($input['sticky_desktop_font_size'])
+			? sanitize_text_field($input['sticky_desktop_font_size'])
+			: '';
+
+		$input['sticky_mobile_font_size'] = isset($input['sticky_mobile_font_size'])
+			? sanitize_text_field($input['sticky_mobile_font_size'])
+			: '';
+
+		// Checkbox: 1 if checked, 0 if unchecked (browser sends nothing when unchecked).
+		$input['enable_only_on_home'] = isset($input['enable_only_on_home'])
+			? absint($input['enable_only_on_home'])
+			: 0;
+
+		return $input;
 	}
 	function add_plugin_meta_links($meta_fields, $file)
 	{
